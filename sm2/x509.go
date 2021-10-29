@@ -1037,7 +1037,7 @@ func checkSignature(algo SignatureAlgorithm, signed, signature []byte, publicKey
 				Curve: pub.Curve,
 				X:     pub.X,
 				Y:     pub.Y,
-			}, digest, default_uid, ecdsaSig.R, ecdsaSig.S) {
+			}, signed, default_uid, ecdsaSig.R, ecdsaSig.S) {
 				return errors.New("x509: SM2 verification failure")
 
 			}
@@ -1063,7 +1063,7 @@ func checkSignature(algo SignatureAlgorithm, signed, signature []byte, publicKey
 				Curve: pub.Curve,
 				X:     pub.X,
 				Y:     pub.Y,
-			}, digest, default_uid, ecdsaSig.R, ecdsaSig.S) {
+			}, signed, default_uid, ecdsaSig.R, ecdsaSig.S) {
 				return errors.New("x509: SM2 verification failure")
 			}
 		}
